@@ -1,5 +1,8 @@
 Revision history for Perl extension ShipIt::Step::CommitMessageWrap
 
+0.03    2007-12-31T17:30:00+09:00
+        - tag_version method hook point is mistaken
+
 0.02    2007-12-31T17:21:00+09:00
         - fixed UUV warnings
 
