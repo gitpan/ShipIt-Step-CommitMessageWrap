@@ -2,7 +2,7 @@ package ShipIt::Step::CommitMessageWrap;
 use strict;
 use warnings;
 use base 'ShipIt::Step';
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 sub init {
     my ($self, $conf) = @_;
@@ -22,18 +22,18 @@ sub run {
     no strict 'refs';
     *{"$pkg\::commit"} = sub {
         use strict;
-        my $self = shift;
+        my $c = shift;
         my $msg  = shift;
         $msg = sprintf $self->{format}, $msg;
-        $commit->($self, $msg, @_);
+        $commit->($c, $msg, @_);
     };
     *{"$pkg\::tag_version"} = sub {
         use strict;
-        my $self = shift;
+        my $c = shift;
         my $ver  = shift;
         my $msg  = shift;
         $msg = sprintf $self->{format}, $msg;
-        $commit->($self, $ver, $msg, @_);
+        $commit->($c, $ver, $msg, @_);
     };
     use strict;
 }

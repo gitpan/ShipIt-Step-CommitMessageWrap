@@ -1,4 +1,7 @@
 Revision history for Perl extension ShipIt::Step::CommitMessageWrap
 
+0.02    2007-12-31T17:21:00+09:00
+        - fixed UUV warnings
+
 0.01    2007-12-31T17:01:04+09:00
         - original version
